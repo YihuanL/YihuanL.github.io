@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex w-full items-center justify-between whitespace-nowrap border-b border-solid border-[#dbe0e6] dark:border-white/10 px-4 py-3 sm:px-6 lg:px-10">
+<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">My Website</h2>
+</div>
+<div class="flex flex-1 items-center justify-end gap-4 sm:gap-6 lg:gap-8">
+<nav class="hidden items-center gap-9 md:flex">
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">Articles</a>
+<a class="text-[#111418] dark:text-white text-sm font-medium leading-normal" href="#">About Me</a>
+</nav>
+<button class="hidden min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] sm:flex">
+<span class="truncate">Contact</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDosRixyXLCxz0OJXC1Rr-XdqE7POJnr4lowAcV2npxHRR2U_fhIisf8smnUknWm-PNPqRgwbc4ZufjJu2tihzOl26HuGqPnUcyYEPXMvqHiTUjzmdrCl6eskBgitQsHO1rGpO2JKRrO597QJeEeFqikTdVQFVH5ZtdF8IIPnRk1tJBLC4N_mUh0Zy5YzBReU0xwHb2U0-Pnq7b5PqTEKEYBJV7WW3TArWLmTXMcyZHMM4JqDjhWZrXyKG6TZei3yZjZB-58kAzNa31");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 py-8 sm:px-6 md:px-10 lg:px-20">
+<div class="mx-auto flex max-w-[960px] flex-col gap-8">
+<div class="flex flex-col gap-6">
+<div class="flex flex-wrap gap-2">
+<a class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal" href="#">Dashboard</a>
+<span class="text-[#617589] dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+<span class="text-[#111418] dark:text-white text-sm font-medium leading-normal">Edit Profile</span>
+</div>
+<div class="flex flex-wrap justify-between gap-3">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">Edit Your Profile</p>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Update your personal information and social media links.</p>
+</div>
+</div>
+</div>
+<div class="flex w-full flex-col divide-y divide-[#dbe0e6] dark:divide-white/10 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/50">
+<div class="p-6 @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24" data-alt="User's current avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-BICvO4iJaAGTzS4Vmc8V1WR5zhbdGeO-ee3GygGnEd3tT62DzF6bes9Fq10kF2B2nViztx8fck0eVvWDP5T0trwpUTiNnfCtuYBJBm1iYMgRJ_S_UeKHMwWx3-bfyiLD05AaZu4FFwf60f05j0ead2nOkZ28kJq-1-TwzhVe_apzQH1pc6e5mrOkk6dd-uC522brdzaB5pqYnu5NmpUVYMRCwG1V6E-ByMUuhZX2-tTlPey1nB3isrMidWQgDYq7zvQZGBaw1KIb");'></div>
+<div class="flex flex-col justify-center gap-1">
+<p class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Your Avatar</p>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Recommended size: 400x400px, JPG or PNG.</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f4] dark:bg-white/10 text-[#111418] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[480px] @[480px]:w-auto">
+<span class="truncate">Upload New Photo</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-6">
+<div class="flex flex-col gap-2">
+<label class="text-[#111418] dark:text-white text-base font-medium leading-normal" for="fullName">Full Name</label>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/20 focus:border-primary h-12 placeholder:text-[#617589] px-4 py-3 text-base font-normal leading-normal" id="fullName" value="John Doe"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[#111418] dark:text-white text-base font-medium leading-normal" for="bio">Short Bio</label>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/20 focus:border-primary h-32 placeholder:text-[#617589] p-4 text-base font-normal leading-normal" id="bio">I'm a UI designer passionate about creating clean, modern, and user-friendly interfaces. I love sharing my thoughts on design trends and new technologies through my articles.</textarea>
+<p class="text-[#617589] dark:text-gray-400 text-sm font-normal leading-normal">Max 300 characters.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 p-6">
+<div class="flex flex-col gap-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Social Media</h3>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Add links to your social profiles.</p>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-[#f0f2f4] dark:bg-white/10 text-[#617589] dark:text-gray-400">
+<span class="material-symbols-outlined">link</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/20 focus:border-primary h-12 placeholder:text-[#617589] px-4 py-3 text-base font-normal leading-normal" placeholder="Website URL" value="https://johndoe.design"/>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-[#f0f2f4] dark:bg-white/10 text-[#617589] dark:text-gray-400">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/20 focus:border-primary h-12 placeholder:text-[#617589] px-4 py-3 text-base font-normal leading-normal" placeholder="twitter.com/username" value="twitter.com/johndoe"/>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-lg bg-[#f0f2f4] dark:bg-white/10 text-[#617589] dark:text-gray-400">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" fill-rule="evenodd"></path></svg>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/20 focus:border-primary h-12 placeholder:text-[#617589] px-4 py-3 text-base font-normal leading-normal" placeholder="github.com/username" value=""/>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 border border-dashed border-[#dbe0e6] dark:border-white/20 text-[#617589] dark:text-gray-400 hover:bg-[#f0f2f4] dark:hover:bg-white/10 text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="material-symbols-outlined text-base">add</span>
+<span class="truncate">Add another link</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 p-6">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f2f4] dark:bg-white/10 text-[#111418] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] w-full sm:w-auto">
+<span class="truncate">Cancel</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] w-full sm:w-auto">
+<span class="truncate">Save Changes</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

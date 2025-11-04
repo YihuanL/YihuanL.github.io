@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Website Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white/90">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex h-full w-full flex-1">
+<!-- Side Navigation Bar -->
+<aside class="flex h-screen w-64 flex-col border-r border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark sticky top-0">
+<div class="flex flex-col gap-4 p-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCw5KtSbnvTmsGdxjDeauELaoXvVlehRePjwoM0HkcXJtdkA0ViH-7IEdeny00pc4P56frAUWFYYytM_3rVMT-z4JniFoq8ViaIgxm8AYku05RIU_-vdFMIu5rhjKRCKsg3kLLo_eIGK_TddiWEGCwyLfXDG5ztDy53mYtIFRqNelUSGBL19JPk-9dzzXjV3UM6vtzTAVt5_KeOIKQWIcgfEnsdo06LLxaxGV4vvSiq6faIIqoNXZjYCh0yPckk24c3X7RAMl7vWsWx");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-medium leading-normal text-[#111418] dark:text-white/90">Admin Name</h1>
+<p class="text-sm font-normal leading-normal text-[#617589] dark:text-white/60">Administrator</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-primary text-2xl">settings</span>
+<p class="text-sm font-medium leading-normal text-primary">General</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white/80 text-2xl">group</span>
+<p class="text-sm font-medium leading-normal text-[#111418] dark:text-white/80">Users &amp; Roles</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white/80 text-2xl">notifications</span>
+<p class="text-sm font-medium leading-normal text-[#111418] dark:text-white/80">Notifications</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" href="#">
+<span class="material-symbols-outlined text-[#111418] dark:text-white/80 text-2xl">lock</span>
+<p class="text-sm font-medium leading-normal text-[#111418] dark:text-white/80">Privacy</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col pb-24">
+<div class="flex flex-col gap-8 p-6 md:p-10">
+<!-- Page Heading -->
+<header>
+<p class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Website Settings</p>
+</header>
+<!-- General Settings Section -->
+<section class="flex flex-col gap-6 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<header class="border-b border-[#dbe0e6] dark:border-white/10 px-6 py-4">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Site Information</h2>
+<p class="text-[#617589] dark:text-white/60 text-sm mt-1">Update your website's title, description, and language.</p>
+</header>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<label class="flex flex-col">
+<p class="text-[#111418] dark:text-white/90 text-base font-medium leading-normal pb-2">Website Title</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/20 bg-white dark:bg-background-dark h-14 placeholder:text-[#617589] dark:placeholder:text-white/50 p-[15px] text-base font-normal leading-normal" value="My Personal Blog"/>
+</label>
+<label class="flex flex-col">
+<p class="text-[#111418] dark:text-white/90 text-base font-medium leading-normal pb-2">Site Language</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/20 bg-white dark:bg-background-dark h-14 p-[15px] text-base font-normal leading-normal">
+<option>English</option>
+<option>Spanish</option>
+<option>French</option>
+<option>German</option>
+</select>
+</label>
+<label class="flex flex-col md:col-span-2">
+<p class="text-[#111418] dark:text-white/90 text-base font-medium leading-normal pb-2">Website Description/Tagline</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-[#111418] dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/20 bg-white dark:bg-background-dark min-h-36 placeholder:text-[#617589] dark:placeholder:text-white/50 p-[15px] text-base font-normal leading-normal">A place for my thoughts, projects, and articles.</textarea>
+</label>
+</div>
+</section>
+<!-- Users & Roles Section -->
+<section class="flex flex-col gap-6 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<header class="border-b border-[#dbe0e6] dark:border-white/10 px-6 py-4">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Manage Collaborators</h2>
+<p class="text-[#617589] dark:text-white/60 text-sm mt-1">Invite and manage users who can contribute to your website.</p>
+</header>
+<div class="p-6 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row gap-4 items-end">
+<label class="flex flex-col flex-1">
+<p class="text-[#111418] dark:text-white/90 text-base font-medium leading-normal pb-2">User Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/20 bg-white dark:bg-background-dark h-14 placeholder:text-[#617589] dark:placeholder:text-white/50 p-[15px] text-base font-normal leading-normal" placeholder="name@example.com" type="email"/>
+</label>
+<label class="flex flex-col min-w-[160px]">
+<p class="text-[#111418] dark:text-white/90 text-base font-medium leading-normal pb-2">Role</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white/90 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#dbe0e6] dark:border-white/20 bg-white dark:bg-background-dark h-14 p-[15px] text-base font-normal leading-normal">
+<option>Editor</option>
+<option>Author</option>
+<option>Contributor</option>
+</select>
+</label>
+<button class="h-14 px-6 py-2 bg-primary text-white rounded-lg text-base font-medium shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark w-full md:w-auto">Invite User</button>
+</div>
+<div class="border-t border-[#dbe0e6] dark:border-white/10 pt-6">
+<ul class="space-y-3">
+<li class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="User avatar for Jane Cooper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtwkbtcS7zQJrdbzvn9A6B7s9T6Ve7qUYkpnvTOQ9CHSWLxSBgWwTDDoyeQTCBGg5pALCKekTA88G7qKev_s8muLxau_0cc_AVxCvxuxmjlUr3z29RMDRLmc3vw7XLI9D0KGPmG_XCGq8K5tWgqKh2kUsmRhy-aWZM_0NGTU73Yao0T-OrGkSzWGXdniYNRFvagyPwEaApyASq6l7L_-l7gqkhnKzr5N2FK4FyO5C5IwXL9FTkH22E1W5kSIEQBpZRedAsIpMFPHg7"/>
+<div>
+<p class="font-medium text-[#111418] dark:text-white/90">Jane Cooper</p>
+<p class="text-sm text-[#617589] dark:text-white/60">jane.cooper@example.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm text-[#617589] dark:text-white/60">Editor</span>
+<button class="text-red-500 hover:text-red-700">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</li>
+<li class="flex items-center justify-between p-3 rounded-lg bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-3">
+<img class="size-10 rounded-full" data-alt="User avatar for John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPNcWq8Cxs1JzyzgSg2BCHNtUHUoYru1cAWHkpdNbl4cVQvLvXrJuomlulllIHD2OjJNGZFiOcbYTw09PW3R_yurJ2pX3HaZoCNpugxA64h-TPlu6Hs32ijKqzDadeyS1v0BjsQFbuIoOmvEG8LWTJkQTxb6o7BoH0a4pTcCeJi1DyZwUEfSt6uKXe0P3pKtJoxlrwAyqdJSGP-uTPi9d5OeyoT7O1tRNVztNetv0ZAqSsqbrFy82V3jbxf0Qia2KoWITb5VcNNJj7"/>
+<div>
+<p class="font-medium text-[#111418] dark:text-white/90">John Doe</p>
+<p class="text-sm text-[#617589] dark:text-white/60">john.doe@example.com</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-sm text-[#617589] dark:text-white/60">Author</span>
+<button class="text-red-500 hover:text-red-700">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Notifications Section -->
+<section class="flex flex-col gap-6 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<header class="border-b border-[#dbe0e6] dark:border-white/10 px-6 py-4">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Email Notifications</h2>
+<p class="text-[#617589] dark:text-white/60 text-sm mt-1">Manage the email notifications you receive.</p>
+</header>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="new-comments">Notify me of new comments</label>
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="new-comments" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="weekly-summary">Send weekly content summary</label>
+<input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="weekly-summary" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="product-updates">Inform me about product updates</label>
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="product-updates" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="security-alerts">Security and account alerts</label>
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="security-alerts" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- Privacy Section -->
+<section class="flex flex-col gap-6 rounded-xl border border-[#dbe0e6] dark:border-white/10 bg-white dark:bg-background-dark/50 shadow-sm">
+<header class="border-b border-[#dbe0e6] dark:border-white/10 px-6 py-4">
+<h2 class="text-[#111418] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">Privacy &amp; Visibility</h2>
+<p class="text-[#617589] dark:text-white/60 text-sm mt-1">Control your site's visibility and privacy settings.</p>
+</header>
+<div class="p-6 grid grid-cols-1 gap-4">
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="search-indexing">Allow search engine indexing</label>
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="search-indexing" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="author-profiles">Show author profiles publicly</label>
+<input checked="" class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="author-profiles" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg border border-[#dbe0e6] dark:border-white/20">
+<label class="font-medium text-[#111418] dark:text-white/90" for="password-protection">Enable password protection for the entire site</label>
+<input class="form-checkbox h-5 w-5 rounded text-primary focus:ring-primary/50 border-[#dbe0e6] dark:border-white/20 bg-transparent dark:bg-background-dark" id="password-protection" type="checkbox"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Action Bar -->
+<footer class="fixed bottom-0 right-0 w-full lg:w-[calc(100%-16rem)] border-t border-[#dbe0e6] dark:border-white/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex justify-end gap-4 p-4 max-w-7xl mx-auto">
+<button class="px-6 py-2 bg-transparent text-[#617589] dark:text-white/60 rounded-lg text-base font-medium hover:bg-black/5 dark:hover:bg-white/5">Discard</button>
+<button class="px-6 py-2 bg-primary text-white rounded-lg text-base font-medium shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">Save Changes</button>
+</div>
+</footer>
+</main>
+</div>
+</div>
+</body></html>

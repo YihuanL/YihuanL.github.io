@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Article Page - My Personal Website</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "text-light": "#111418",
+              "text-dark": "#f0f2f4",
+              "text-muted-light": "#617589",
+              "text-muted-dark": "#94a3b8",
+              "border-light": "#e2e8f0",
+              "border-dark": "#334155",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-4">
+<div class="text-primary h-6 w-6">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">My Personal Website</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Articles</a>
+<a class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+<span class="truncate">Subscribe</span>
+</button>
+</div>
+<button class="md:hidden flex items-center justify-center p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+<article class="flex flex-col gap-8 md:gap-12">
+<!-- PageHeading -->
+<div class="flex flex-col gap-4 text-center">
+<p class="text-primary font-semibold text-sm uppercase">Design &amp; Creativity</p>
+<h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tighter">The Art of Minimalist Design</h1>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">By John Doe - Published on October 26, 2023 - 7 min read</p>
+</div>
+<!-- HeaderImage -->
+<div class="w-full">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-80 md:min-h-[400px]" data-alt="Abstract gradient of blue and purple hues representing creativity" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDNz8VeyM59jvYsbeDJtMxzoamfxT74jNPDPtdi-7tquvJqNpDQ5yhiRsHjS1zXc0QEprtcy0YJLKH29Zmw0wzfMnwqjANcvhVb0uMcvvzUqyYntBfJzF-BiPHINZ5EPlF8fdaIFj8iKeQK2NHhNQ0S24vy0tW_UfXWYzRYkfoaXBENeJ8Uh6RWhWwpb7ruLZzbPab2XmWmz2mdeZLUHia3dN6PGEtQjc38s_up-3M_ZCmUsLa43gcZBj64KMApw11Hz8WCFT2styCg");'></div>
+</div>
+<!-- Article Body -->
+<div class="prose prose-lg dark:prose-invert max-w-none text-text-light dark:text-text-dark font-display">
+<p>
+                        This is the main body of the article, where the content is laid out in a clean, readable format. The design prioritizes typography and whitespace to create a calm, focused reading experience. Paragraphs are well-structured to ensure the text flows smoothly and is easy on the eyes. The single-column layout helps to minimize distractions, keeping the reader engaged with the content from start to finish.
+                    </p>
+<p>
+                        Minimalism isn't just about what you remove, but about what you leave behind. Every element must serve a purpose. In user interface design, this translates to decluttered screens, intuitive navigation, and a clear visual hierarchy. It’s a philosophy that respects the user's attention, providing information in the most direct and efficient way possible.
+                    </p>
+<h2>The Core Principles</h2>
+<p>
+                        Further paragraphs will continue here, elaborating on the main points of the article. This section might include lists, blockquotes, or other formatting to break up the text and highlight key information. Accessibility is a key consideration, with high contrast text and proper heading structures.
+                    </p>
+<ul>
+<li><strong>Whitespace as a Tool:</strong> Negative space is not empty space; it's a powerful design element that gives content room to breathe.</li>
+<li><strong>Limited Color Palette:</strong> A restrained use of color helps to create a cohesive and calming visual experience.</li>
+<li><strong>Strong Typography:</strong> When visual elements are sparse, typography becomes paramount in conveying hierarchy and tone.</li>
+</ul>
+<blockquote>
+<p>"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."</p>
+<cite>– Antoine de Saint-Exupéry</cite>
+</blockquote>
+<p>
+                        Ultimately, embracing minimalist design is about focusing on the essential. It’s a challenge to strip away the superfluous and deliver a product that is both beautiful in its simplicity and highly functional. By adhering to these principles, designers can create experiences that are not only aesthetically pleasing but also profoundly user-centric.
+                    </p>
+</div>
+<!-- Social Share Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-b border-border-light dark:border-border-dark">
+<p class="font-bold text-base">Share this article</p>
+<div class="flex items-center gap-2">
+<a aria-label="Share on Twitter" class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a aria-label="Share on LinkedIn" class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a aria-label="Share on Facebook" class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors" href="#">
+<svg class="h-5 w-5" fill="currentColor" viewbox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg>
+</a>
+<button aria-label="Copy link" class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined text-xl">link</span>
+</button>
+</div>
+</div>
+<!-- Comments Section -->
+<section class="flex flex-col gap-8">
+<h2 class="text-2xl md:text-3xl font-bold">Join the Discussion (2)</h2>
+<!-- Add Comment Form -->
+<div class="flex flex-col gap-4">
+<textarea class="w-full p-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="Write your comment..." rows="4"></textarea>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 p-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="Your Name" type="text"/>
+<input class="flex-1 p-3 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:ring-2 focus:ring-primary focus:border-primary transition-shadow" placeholder="Your Email (optional)" type="email"/>
+</div>
+<button class="self-start min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity">
+<span class="truncate">Post Comment</span>
+</button>
+</div>
+<!-- Existing Comments -->
+<div class="flex flex-col gap-6">
+<div class="flex gap-4">
+<img class="size-10 rounded-full bg-gray-300 dark:bg-gray-600" data-alt="Avatar for Jane Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiq5vI3dSu2wUAJfKj_tBjTlLtRxuh-QkWG7e-rpZYXqmzVdbODZnk4eDpyaeRSRRL-pwgioGzz8QbK2sc3fAoWKQFflw-x_MNzk31f-GLBfbiWVr5qTVYgCQaLT_lylN-ribN9ytXwrNMeyTs-pBFc5ekuxesyFFnuNfxJnqsYWvpGH3CSbux0NaGWjuhsvsiJUCiQ7h3xL5vSzUfmL7g2F6AgwaGuJnhJ2X877Az0MxBoSglRHyCEkmHx4og5SBa28-buhl4uQbB"/>
+<div class="flex flex-col gap-1">
+<p class="font-bold">Jane Smith <span class="text-sm font-normal text-text-muted-light dark:text-text-muted-dark ml-2">2 days ago</span></p>
+<p class="text-base">Great insights! Minimalism truly helps in creating a more focused and intentional user experience. Loved the quote you included.</p>
+<button class="text-primary font-semibold text-sm self-start mt-1">Reply</button>
+</div>
+</div>
+<div class="flex gap-4">
+<img class="size-10 rounded-full bg-gray-300 dark:bg-gray-600" data-alt="Avatar for Mike Johnson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu1Z1mWWh06UxCC5bVxWr5OLxuYqFxX4qpefygC5oA4Kul7iU2Wdk7SutOTFr60zOnNjytSV-DbwfyoSfE2ibhffTPRai6JbfBgtMVN76X8unUK5NEiGLcKweDRKAspDzL7JOY_8TeMnqxlqdr8kLAzQ7QFButRTxaGxInJwBLFTVd94AYudtMXle0pjZS5VR0M4BfOtwksPRUc5WwRJGkF1vSWKoHhoQAY9K6u7KVG8-TkGycRHBuhgtoG5CUOSCse-TcM4vVlEQv"/>
+<div class="flex flex-col gap-1">
+<p class="font-bold">Mike Johnson <span class="text-sm font-normal text-text-muted-light dark:text-text-muted-dark ml-2">1 day ago</span></p>
+<p class="text-base">This article is a fantastic reminder of the 'less is more' philosophy. I'll be applying these principles to my next project for sure.</p>
+<button class="text-primary font-semibold text-sm self-start mt-1">Reply</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Articles -->
+<section class="flex flex-col gap-8 pt-8 border-t border-border-light dark:border-border-dark">
+<h2 class="text-2xl md:text-3xl font-bold">You Might Also Like</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<a class="group flex flex-col gap-4" href="#">
+<div class="overflow-hidden rounded-lg">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A person's hands typing on a laptop with code on the screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb8phfiDc8wqb2cYPRWebJJHUwU0grK6rgFHcFPFONiU9OBZIuTY9D_-O4ldAXeSNm-nr98OWlrDUbqJVgUzgXjjki-l2rgwctIx6t4bS2QrL5DbLjUw2XLIzZ97JTboHQFe-eiLCcMmcRfxv_ul6FH-aEA05t7NCvFe8XJtND_tNHgNBaOUZwICfzvEL7YMC_bNLMcwPvMw1yRA_wJlOceSNGPDQn8EWHRze2oyw1_PqkZO6bEP_H7WGP4WJcxLuEai6jktFtcB9-"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-semibold text-primary">Development</p>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">The Rise of Utility-First CSS</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm">Explore how frameworks like Tailwind CSS are changing the way we write styles.</p>
+</div>
+</a>
+<a class="group flex flex-col gap-4" href="#">
+<div class="overflow-hidden rounded-lg">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A desk with a laptop displaying various data charts and graphs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPLf77uGAw2GcOsB9lBnONP1Y0Jm0pndPDmhF5zYC3Bru7-21L7c-wE0BkTOz6Gje2wWJRid1orkFeFxItwY2cRr9vdtALHXmQctVE_yYHfBVOtDOrzHiyQ_euc5tLUsM-pGStvz0bzv1txJe8ogqhw7RYax1wtutYt_ep2KN8bWyUCVlVGkUot-h2yLFakDphaheUR5tjrQH-EMfd4ZcW2yWmhh8SiPRqLICLdk4FBXeT5FrqxHy2e5x1bKpoU8QQPWbVD_eI4Ieh"/>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-sm font-semibold text-primary">Productivity</p>
+<h3 class="font-bold text-lg group-hover:text-primary transition-colors">Data-Driven Decision Making</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm">Learn how to leverage data to build better products and workflows.</p>
+</div>
+</a>
+</div>
+</section>
+</article>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-text-muted-light dark:text-text-muted-dark">
+<p>© 2023 My Personal Website. All Rights Reserved.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

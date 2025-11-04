@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>John Doe - Articles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "text-light": "#111418",
+              "text-dark": "#f0f2f4",
+              "text-muted-light": "#617589",
+              "text-muted-dark": "#94a3b8",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+              "border-light": "#f0f2f4",
+              "border-dark": "#334155",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5 sm:px-4 md:px-10 lg:px-20 xl:px-40">
+<div class="layout-content-container flex flex-col max-w-4xl flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-6 md:px-10 py-4 bg-surface-light dark:bg-surface-dark/50 rounded-xl">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-text-light dark:text-text-dark">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">John Doe</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal text-primary" href="#">Articles</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-text-muted-light dark:text-text-muted-dark flex bg-background-light dark:bg-background-dark items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-background-light dark:bg-background-dark h-full placeholder:text-text-muted-light placeholder:dark:text-text-muted-dark px-2 rounded-l-none border-l-0 text-base font-normal leading-normal" placeholder="Search articles..." value=""/>
+</div>
+</label>
+<button class="md:hidden flex items-center justify-center size-10 rounded-lg hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-8 mt-10 px-4 sm:px-0">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Articles</p>
+</div>
+<!-- Chips / Filters -->
+<div class="flex gap-2 sm:gap-3 py-3 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-4 bg-primary text-white">
+<p class="text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-4 bg-surface-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Technology</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-4 bg-surface-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Design</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-4 bg-surface-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Productivity</p>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-4 bg-surface-light dark:bg-surface-dark hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">
+<p class="text-sm font-medium leading-normal">Life</p>
+</button>
+</div>
+<!-- Article List -->
+<div class="flex flex-col gap-8">
+<!-- Card 1 -->
+<div class="@container bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex flex-col items-stretch justify-start p-4 @xl:flex-row @xl:items-start @xl:gap-6">
+<div class="w-full @xl:w-1/3 flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract gradient of blue and purple hues" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBg88CYxwsBdL6cq01ATkLLfZ0ZeNGqfA2NX0tzjlZ4_mPFCtYinleQRmc0sSaEfiNjYEmVHB5fMGELICmO2AboIKkjo6M-tAQE3jnh7OYkvZuKPZdq4SUCid3tye2O9SYoTSRKlUwIBbdZf-3MPGeJoFwg9nzkRURGLm7isVIAZasYW38ceTY7OvQ-spXN4CGEAh-PE2ryfGKpMFz8PwB7FYGFFRvUd2wxeYuEVvA0dIl227czRvPjebpJ1eJKV6NImeYE3lpEECuO");'></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-3 py-4 @xl:py-1">
+<h3 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">The Future of User Interface Design</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">John Doe - October 26, 2023</p>
+<p class="text-text-light dark:text-text-dark/90 text-base font-normal leading-relaxed">
+                                            A deep dive into the trends shaping the next generation of digital experiences, from AI-driven interfaces to immersive AR and beyond.
+                                        </p>
+<div class="flex items-center gap-3 justify-start mt-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal transition-transform hover:scale-105">
+<span class="truncate">Read More</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-medium leading-normal transition-transform hover:scale-105 gap-2">
+<span class="material-symbols-outlined text-base">share</span>
+<span class="truncate">Share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="@container bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex flex-col items-stretch justify-start p-4 @xl:flex-row @xl:items-start @xl:gap-6">
+<div class="w-full @xl:w-1/3 flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract gradient of teal and green hues" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBcOA9A9wSMsUnZvNCwT0E64dlMx7sDcA3WTLYoaGdUpAb0G7eesp8yQo4Z0K5T02lv4xr2JypgKhmJ6v-D7vWWXnQntpgWJkathZ6bUm7NkqFopKxCOzt3c5VxhZruir3qVEXndrbK9Lk0aPccBr_w_qeoo8rJpRYau7WFmtZMGF6dwbhkdqI2J7ZGbTaT3xDlpbHoHensrsMVu9p2QOTwT48IKvRojd1YVDuly4Sjwwcfmdi3oM3xIFLIgSlmFF4Pgh6g5KXiV40T");'></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-3 py-4 @xl:py-1">
+<h3 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">Mastering Minimalism in Web Development</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">John Doe - October 15, 2023</p>
+<p class="text-text-light dark:text-text-dark/90 text-base font-normal leading-relaxed">
+                                            Explore how simplifying your code and design can lead to faster, more efficient, and user-friendly websites.
+                                        </p>
+<div class="flex items-center gap-3 justify-start mt-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal transition-transform hover:scale-105">
+<span class="truncate">Read More</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-medium leading-normal transition-transform hover:scale-105 gap-2">
+<span class="material-symbols-outlined text-base">share</span>
+<span class="truncate">Share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="@container bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div class="flex flex-col items-stretch justify-start p-4 @xl:flex-row @xl:items-start @xl:gap-6">
+<div class="w-full @xl:w-1/3 flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Abstract gradient of pink and orange hues" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPaOm7DQWn6TSKzS-ALK7hfiStYNzmAP_270F45Dri4w7aHA9EDU_vGXspYztezIUNEj4I_2r9vEVvcEMYuwNrkfD_QXsJtZenGUKkGT-VQ7HXDFRqeTTHX1R0m2Y0PRGPjO8WmHq3CBz_sArt8WI0BvGw4mYV50FUFZ8VmXqfaeJQYI6La9ptBJ6P2J-1Zj-yJuAWpZDQWFOA3622AMl_4b-0v4G_fQIUgJ9b_OpAz47LPCpLtiG2uMjWvV6bbOGs6KGYSyWaKY19");'></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-3 py-4 @xl:py-1">
+<h3 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em]">A Guide to Effective Remote Collaboration</h3>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Jane Smith - September 28, 2023</p>
+<p class="text-text-light dark:text-text-dark/90 text-base font-normal leading-relaxed">
+                                            Discover tools and strategies for boosting productivity and maintaining team cohesion in a distributed work environment.
+                                        </p>
+<div class="flex items-center gap-3 justify-start mt-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-medium leading-normal transition-transform hover:scale-105">
+<span class="truncate">Read More</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/10 dark:bg-primary/20 text-primary text-sm font-medium leading-normal transition-transform hover:scale-105 gap-2">
+<span class="material-symbols-outlined text-base">share</span>
+<span class="truncate">Share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-2 pt-8">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-surface-light dark:bg-surface-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-primary text-white transition-colors text-sm font-medium">1</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-surface-light dark:bg-surface-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-sm font-medium">2</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-surface-light dark:bg-surface-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-sm font-medium">3</button>
+<span class="text-text-muted-light dark:text-text-muted-dark">...</span>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-surface-light dark:bg-surface-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-sm font-medium">8</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 shrink-0 bg-surface-light dark:bg-surface-dark hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+</body></html>

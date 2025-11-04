@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create New Article</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3B82F6",
+            "background-light": "#F9FAFB",
+            "background-dark": "#111827",
+            "ui-light": "#FFFFFF",
+            "ui-dark": "#1F2937",
+            "text-light": "#1F2937",
+            "text-dark": "#F9FAFB",
+            "subtle-light": "#6B7280",
+            "subtle-dark": "#9CA3AF",
+            "border-light": "#E5E7EB",
+            "border-dark": "#374151"
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-6 sm:px-10 py-3 bg-ui-light dark:bg-ui-dark sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<div class="text-primary text-2xl">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight">MyBlog</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 sm:gap-8 items-center">
+<a class="text-sm font-medium hover:text-primary" href="#">Back to Dashboard</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnCXuMuCSZpMJwRtbfDE3s5soXApRfIghmlBcLCn3ayKepG1fuGIFryhedoWNDE9GC0BGyWUX2mOwjKZYcHOGgF-ulo2lCsUxBEdJL6rNs3j8bUslLpzUUuuqeUPS8v8_xIGSq8GCWrqrgZ_GEBIJti3hguFcZQJ3diWXCOBA4YOMNfDEFReZJrRWyatNP3zVfpDoNhvuCo98NjRp8BngZdzkvvpdgcYJrQLkFGDbnSTeVBBL1zqW3NeCkZ-6DGX6JmXWFZ60Twt4m");'></div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Content Column -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="bg-ui-light dark:bg-ui-dark p-6 sm:p-8 rounded-lg shadow-sm">
+<label class="flex flex-col w-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-2xl sm:text-3xl font-bold tracking-tight focus:outline-0 focus:ring-0 border-none bg-transparent dark:text-white placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-0" placeholder="Enter your article title here..." value=""/>
+</label>
+</div>
+<div class="bg-ui-light dark:bg-ui-dark p-1 sm:p-2 rounded-lg shadow-sm flex-grow flex flex-col">
+<!-- Rich Text Editor Toolbar -->
+<div class="flex items-center gap-1 p-2 border-b border-border-light dark:border-border-dark flex-wrap">
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="format_bold">format_bold</span></button>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="format_italic">format_italic</span></button>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="format_underlined">format_underlined</span></button>
+<div class="w-px h-5 bg-border-light dark:bg-border-dark mx-1"></div>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="format_list_bulleted">format_list_bulleted</span></button>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="format_list_numbered">format_list_numbered</span></button>
+<div class="w-px h-5 bg-border-light dark:bg-border-dark mx-1"></div>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="link">link</span></button>
+<button class="p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark"><span class="material-symbols-outlined text-base" data-icon="image">image</span></button>
+</div>
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-b-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent min-h-96 placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-4 sm:p-6 text-base" placeholder="Start writing your story..."></textarea>
+</div>
+</div>
+<!-- Sidebar Column -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<div class="bg-ui-light dark:bg-ui-dark p-6 rounded-lg shadow-sm">
+<h3 class="text-lg font-bold tracking-tight pb-4 border-b border-border-light dark:border-border-dark">Publishing</h3>
+<div class="flex items-center justify-between pt-4">
+<p class="text-sm font-medium">Status: <span class="text-subtle-light dark:text-subtle-dark font-normal">Draft</span></p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark">Last saved 2 mins ago</p>
+</div>
+<div class="flex items-center gap-4 mt-6">
+<button class="flex-1 text-sm font-semibold py-2 px-4 rounded-lg border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark">Save Draft</button>
+<button class="flex-1 text-sm font-semibold py-2 px-4 rounded-lg bg-primary text-white hover:opacity-90">Publish</button>
+</div>
+</div>
+<div class="bg-ui-light dark:bg-ui-dark p-6 rounded-lg shadow-sm">
+<h3 class="text-lg font-bold tracking-tight">Details</h3>
+<div class="mt-4 flex flex-col gap-6">
+<div>
+<p class="text-base font-medium leading-normal pb-2">Categories / Tags</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-3 text-sm font-normal" placeholder="Add a tag..." value=""/>
+<div class="flex gap-2 p-2 flex-wrap -ml-2">
+<div class="flex h-7 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 dark:bg-primary/20 pl-3 pr-2">
+<p class="text-primary text-xs font-medium">Technology</p>
+<button class="text-primary/70 hover:text-primary"><span class="material-symbols-outlined text-base" data-icon="close">close</span></button>
+</div>
+<div class="flex h-7 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 dark:bg-primary/20 pl-3 pr-2">
+<p class="text-primary text-xs font-medium">Productivity</p>
+<button class="text-primary/70 hover:text-primary"><span class="material-symbols-outlined text-base" data-icon="close">close</span></button>
+</div>
+</div>
+</div>
+<div>
+<p class="text-base font-medium leading-normal pb-2">Featured Image</p>
+<div class="relative w-full border-2 border-dashed border-border-light dark:border-border-dark rounded-lg flex flex-col justify-center items-center p-6 text-center h-48 cursor-pointer hover:border-primary hover:bg-primary/5 dark:hover:bg-primary/10">
+<div class="text-subtle-light dark:text-subtle-dark">
+<span class="material-symbols-outlined text-4xl" data-icon="upload_file">upload_file</span>
+</div>
+<p class="mt-2 text-sm text-subtle-light dark:text-subtle-dark"><span class="font-semibold text-primary">Click to upload</span> or drag and drop</p>
+<p class="text-xs text-subtle-light dark:text-subtle-dark mt-1">PNG, JPG, GIF up to 10MB</p>
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+</div>
+<!-- Image Preview State -->
+<div class="hidden mt-4 w-full aspect-video rounded-lg bg-cover bg-center relative group" data-alt="Abstract gradient for image placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRovb1iPxgL97Z_mJynZ_vu-v3LJ9Lu-n45UicsAjMbTH4S8UjTFA927uc7DCVw2KkX9pbKhXrbZqEQuUKazTryFe5svuLqboAkN46_lt81B6sKpKA4wGQpzjQipwZrBBuQdr249jZeEO-SEJ1WDFh5isbv662P0J5f5F04dQ1tUW-shX1SkQ7BmBAIb8pL6WhSYvFGw8oyupJZhlcKQX2ao20GYG9L6wUHb5M8SrKrKq_Umz2NBOavMyAPBGFMa5ya7ne0ShFxtJG");'>
+<button class="absolute top-2 right-2 bg-black/50 text-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="close">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

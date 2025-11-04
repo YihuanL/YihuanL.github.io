@@ -1,0 +1,41 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "现代化个人博客网站",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --host=0.0.0.0",
+    "build": "echo 'Build completed - static site ready for deployment'",
+    "deploy": "echo 'Deploy process would be implemented here'",
+    "lint": "eslint assets/js/**/*.js",
+    "format": "prettier --write **/*.{html,css,js}",
+    "test": "echo 'Tests would be implemented here'",
+    "predeploy": "npm run build",
+    "homepage": "https://yourusername.github.io/personal-website"
+  },
+  "keywords": [
+    "blog",
+    "personal-website",
+    "portfolio",
+    "frontend",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "张三",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "live-server": "^1.2.2",
+    "prettier": "^2.8.0"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "@tailwindcss/container-queries": "^0.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

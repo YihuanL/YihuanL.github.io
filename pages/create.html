@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建新文章 - 个人博客</title>
+    <meta name="description" content="创建和编辑您的博客文章">
+    
+    <!-- 预连接和字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "ui-light": "#FFFFFF",
+                        "ui-dark": "#1F2937",
+                        "text-light": "#1F2937",
+                        "text-dark": "#F9FAFB",
+                        "subtle-light": "#6B7280",
+                        "subtle-dark": "#9CA3AF",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- 富文本编辑器样式 -->
+    <style>
+        .editor-content {
+            min-height: 400px;
+            outline: none;
+        }
+        
+        .editor-content:focus {
+            outline: none;
+        }
+        
+        .editor-content h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 0.5em 0;
+        }
+        
+        .editor-content h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0.5em 0;
+        }
+        
+        .editor-content h3 {
+            font-size: 1.25em;
+            font-weight: bold;
+            margin: 0.5em 0;
+        }
+        
+        .editor-content p {
+            margin: 0.5em 0;
+            line-height: 1.5;
+        }
+        
+        .editor-content ul, .editor-content ol {
+            margin: 0.5em 0;
+            padding-left: 2em;
+        }
+        
+        .editor-content li {
+            margin: 0.25em 0;
+        }
+        
+        .editor-content blockquote {
+            border-left: 4px solid #137fec;
+            padding-left: 1em;
+            margin: 0.5em 0;
+            font-style: italic;
+            color: #6B7280;
+        }
+        
+        .editor-content code {
+            background-color: #f3f4f6;
+            padding: 0.125em 0.25em;
+            border-radius: 0.25rem;
+            font-family: monospace;
+        }
+        
+        .editor-content pre {
+            background-color: #f3f4f6;
+            padding: 1em;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        
+        .dark .editor-content blockquote {
+            color: #9CA3AF;
+        }
+        
+        .dark .editor-content code,
+        .dark .editor-content pre {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <!-- 导航栏 -->
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-6 sm:px-10 py-3 bg-ui-light dark:bg-ui-dark sticky top-0 z-10">
+        <div class="flex items-center gap-4">
+            <a href="../index.html" class="flex items-center space-x-2 text-text-light dark:text-text-dark hover:text-primary transition-colors">
+                <span class="material-icons-outlined">arrow_back</span>
+                <span>返回首页</span>
+            </a>
+            <div class="text-primary text-2xl">
+                <span class="material-icons-outlined">auto_stories</span>
+            </div>
+            <h2 class="text-lg font-bold tracking-tight">我的博客</h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-6 sm:gap-8 items-center">
+            <a href="dashboard.html" class="text-sm font-medium hover:text-primary">返回仪表板</a>
+            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" id="user-avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnCXuMuCSZpMJwRtbfDE3s5soXApRfIghmlBcLCn3ayKepG1fuGIFryhedoWNDE9GC0BGyWUX2mOwjKZYcHOGgF-ulo2lCsUxBEdJL6rNs3j8bUslLpzUUuuqeUPS8v8_xIGSq8GCWrqrgZ_GEBIJti3hguFcZQJ3diWXCOBA4YOMNfDEFReZJrRWyatNP3zVfpDoNhvuCo98NjRp8BngZdzkvvpdgcYJrQLkFGDbnSTeVBBL1zqW3NeCkZ-6DGX6JmXWFZ60Twt4m");'></div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 主内容列 -->
+            <div class="lg:col-span-2 flex flex-col gap-6">
+                <!-- 标题输入 -->
+                <div class="bg-ui-light dark:bg-ui-dark p-6 sm:p-8 rounded-lg shadow-sm">
+                    <label class="flex flex-col w-full">
+                        <input 
+                            type="text" 
+                            id="article-title"
+                            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-2xl sm:text-3xl font-bold tracking-tight focus:outline-0 focus:ring-0 border-none bg-transparent dark:text-white placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-0" 
+                            placeholder="输入您的文章标题..."
+                            value=""
+                        >
+                    </label>
+                </div>
+                
+                <!-- 富文本编辑器 -->
+                <div class="bg-ui-light dark:bg-ui-dark p-1 sm:p-2 rounded-lg shadow-sm flex-grow flex flex-col">
+                    <!-- 工具栏 -->
+                    <div class="flex items-center gap-1 p-2 border-b border-border-light dark:border-border-dark flex-wrap">
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="bold" title="粗体">
+                            <span class="material-icons-outlined text-base">format_bold</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="italic" title="斜体">
+                            <span class="material-icons-outlined text-base">format_italic</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="underline" title="下划线">
+                            <span class="material-icons-outlined text-base">format_underlined</span>
+                        </button>
+                        <div class="w-px h-5 bg-border-light dark:bg-border-dark mx-1"></div>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="insertUnorderedList" title="无序列表">
+                            <span class="material-icons-outlined text-base">format_list_bulleted</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="insertOrderedList" title="有序列表">
+                            <span class="material-icons-outlined text-base">format_list_numbered</span>
+                        </button>
+                        <div class="w-px h-5 bg-border-light dark:bg-border-dark mx-1"></div>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="createLink" title="插入链接">
+                            <span class="material-icons-outlined text-base">link</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="insertImage" title="插入图片">
+                            <span class="material-icons-outlined text-base">image</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="formatBlock" data-value="blockquote" title="引用">
+                            <span class="material-icons-outlined text-base">format_quote</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="formatBlock" data-value="pre" title="代码块">
+                            <span class="material-icons-outlined text-base">code</span>
+                        </button>
+                        <div class="w-px h-5 bg-border-light dark:bg-border-dark mx-1"></div>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="undo" title="撤销">
+                            <span class="material-icons-outlined text-base">undo</span>
+                        </button>
+                        <button type="button" class="editor-btn p-2 rounded hover:bg-background-light dark:hover:bg-background-dark text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark" data-command="redo" title="重做">
+                            <span class="material-icons-outlined text-base">redo</span>
+                        </button>
+                    </div>
+                    
+                    <!-- 编辑区域 -->
+                    <div 
+                        id="editor-content"
+                        class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-b-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent min-h-96 placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-4 sm:p-6 text-base editor-content"
+                        contenteditable="true"
+                        data-placeholder="开始撰写您的故事..."
+                    ></div>
+                </div>
+            </div>
+            
+            <!-- 侧边栏 -->
+            <div class="lg:col-span-1 flex flex-col gap-6">
+                <!-- 发布设置 -->
+                <div class="bg-ui-light dark:bg-ui-dark p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-bold tracking-tight pb-4 border-b border-border-light dark:border-border-dark">发布设置</h3>
+                    <div class="flex items-center justify-between pt-4">
+                        <p class="text-sm font-medium">状态: <span id="article-status" class="text-subtle-light dark:text-subtle-dark font-normal">草稿</span></p>
+                        <p id="last-saved" class="text-xs text-subtle-light dark:text-subtle-dark">未保存</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-6">
+                        <button id="save-draft-btn" class="flex-1 text-sm font-semibold py-2 px-4 rounded-lg border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+                            保存草稿
+                        </button>
+                        <button id="publish-btn" class="flex-1 text-sm font-semibold py-2 px-4 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors">
+                            发布
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 文章详情 -->
+                <div class="bg-ui-light dark:bg-ui-dark p-6 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-bold tracking-tight">文章详情</h3>
+                    <div class="mt-4 flex flex-col gap-6">
+                        <!-- 分类/标签 -->
+                        <div>
+                            <p class="text-base font-medium leading-normal pb-2">分类 / 标签</p>
+                            <input 
+                                type="text" 
+                                id="tag-input"
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark h-12 placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-3 text-sm font-normal" 
+                                placeholder="添加标签..."
+                            >
+                            <div id="tags-container" class="flex gap-2 p-2 flex-wrap -ml-2">
+                                <!-- 标签将通过JavaScript动态添加 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 特色图片 -->
+                        <div>
+                            <p class="text-base font-medium leading-normal pb-2">特色图片</p>
+                            <div id="featured-image-container" class="relative w-full border-2 border-dashed border-border-light dark:border-border-dark rounded-lg flex flex-col justify-center items-center p-6 text-center h-48 cursor-pointer hover:border-primary hover:bg-primary/5 dark:hover:bg-primary/10">
+                                <div class="text-subtle-light dark:text-subtle-dark">
+                                    <span class="material-icons-outlined text-4xl">upload_file</span>
+                                </div>
+                                <p class="mt-2 text-sm text-subtle-light dark:text-subtle-dark"><span class="font-semibold text-primary">点击上传</span> 或拖放文件</p>
+                                <p class="text-xs text-subtle-light dark:text-subtle-dark mt-1">PNG、JPG、GIF 最大 10MB</p>
+                                <input id="featured-image-input" type="file" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                            </div>
+                            
+                            <!-- 图片预览 -->
+                            <div id="featured-image-preview" class="hidden mt-4 w-full aspect-video rounded-lg bg-cover bg-center relative group">
+                                <img id="featured-image-img" src="" alt="特色图片" class="w-full h-full object-cover rounded-lg">
+                                <button type="button" id="remove-featured-image" class="absolute top-2 right-2 bg-black/50 text-white rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span class="material-icons-outlined text-lg">close</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 摘要 -->
+                        <div>
+                            <p class="text-base font-medium leading-normal pb-2">文章摘要</p>
+                            <textarea 
+                                id="article-excerpt"
+                                rows="4"
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark placeholder:text-subtle-light dark:placeholder:text-subtle-dark p-3 text-sm font-normal"
+                                placeholder="输入文章摘要（可选）"
+                            ></textarea>
+                        </div>
+                        
+                        <!-- 阅读时间估算 -->
+                        <div>
+                            <p class="text-base font-medium leading-normal pb-2">阅读时间</p>
+                            <p id="reading-time" class="text-sm text-subtle-light dark:text-subtle-dark">约 0 分钟阅读</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 发布确认模态框 -->
+    <div id="publish-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- 背景遮罩 -->
+            <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75 dark:bg-opacity-50" onclick="closePublishModal()"></div>
+            
+            <!-- 模态框内容 -->
+            <div class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-ui-light dark:bg-ui-dark shadow-xl rounded-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-medium text-text-light dark:text-text-dark">发布文章</h3>
+                    <button onclick="closePublishModal()" class="text-subtle-light dark:text-subtle-dark hover:text-text-light dark:hover:text-text-dark">
+                        <span class="material-icons-outlined">close</span>
+                    </button>
+                </div>
+                
+                <div class="mb-6">
+                    <p class="text-text-light dark:text-text-dark mb-2">您确定要发布这篇文章吗？</p>
+                    <p class="text-sm text-subtle-light dark:text-subtle-dark">发布后，文章将对所有访问者可见。</p>
+                </div>
+                
+                <div class="flex justify-end space-x-3">
+                    <button type="button" onclick="closePublishModal()" class="px-4 py-2 border border-border-light dark:border-border-dark rounded-lg hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+                        取消
+                    </button>
+                    <button type="button" onclick="confirmPublish()" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
+                        确认发布
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/editor.js"></script>
+</body>
+</html>
