@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站分析 - 个人博客</title>
+    <meta name="description" content="查看网站流量和用户行为分析">
+    
+    <!-- 预连接和字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Tailwind 配置 -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "ui-light": "#ffffff",
+                        "ui-dark": "#1f2937",
+                        "text-light": "#111418",
+                        "text-dark": "#f9fafb",
+                        "subtle-light": "#617589",
+                        "subtle-dark": "#9ca3af",
+                        "border-light": "#dbe0e6",
+                        "border-dark": "#374151"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-ui-light dark:bg-ui-dark border-b border-border-light dark:border-border-dark">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo和网站名称 -->
+                <div class="flex items-center space-x-3">
+                    <a href="../index.html" class="flex items-center space-x-3 text-text-light dark:text-text-dark hover:text-primary transition-colors">
+                        <span class="material-icons-outlined text-primary text-2xl">auto_stories</span>
+                        <h1 class="text-xl font-bold">我的博客</h1>
+                    </a>
+                </div>
+                
+                <!-- 右侧按钮 -->
+                <div class="flex items-center space-x-4">
+                    <!-- 主题切换 -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+                        <span class="material-icons-outlined text-text-light dark:text-text-dark">dark_mode</span>
+                    </button>
+                    
+                    <!-- 用户菜单 -->
+                    <div class="relative">
+                        <button id="user-menu" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-background-light dark:hover:bg-background-dark transition-colors">
+                            <img id="user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCXuMuCSZpMJwRtbfDE3s5soXApRfIghmlBcLCn3ayKepG1fuGIFryhedoWNDE9GC0BGyWUX2mOwjKZYcHOGgF-ulo2lCsUxBEdJL6rNs3j8bUslLpzUUuuqeUPS8v8_xIGSq8GCWrqrgZ_GEBIJti3hguFcZQJ3diWXCOBA4YOMNfDEFReZJrRWyatNP3zVfpDoNhvuCo98NjRp8BngZdzkvvpdgcYJrQLkFGDbnSTeVBBL1zqW3NeCkZ-6DGX6JmXWFZ60Twt4m" alt="用户头像" class="w-8 h-8 rounded-full">
+                        </button>
+                        
+                        <!-- 下拉菜单 -->
+                        <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-ui-light dark:bg-ui-dark rounded-lg shadow-lg border border-border-light dark:border-border-dark">
+                            <a href="profile.html" class="block px-4 py-2 text-text-light dark:text-text-dark hover:bg-background-light dark:hover:bg-background-dark">个人资料</a>
+                            <a href="dashboard.html" class="block px-4 py-2 text-text-light dark:text-text-dark hover:bg-background-light dark:hover:bg-background-dark">管理后台</a>
+                            <a href="settings.html" class="block px-4 py-2 text-text-light dark:text-text-dark hover:bg-background-light dark:hover:bg-background-dark">设置</a>
+                            <hr class="border-border-light dark:border-border-dark">
+                            <a href="login.html" class="block px-4 py-2 text-text-light dark:text-text-dark hover:bg-background-light dark:hover:bg-background-dark">退出登录</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 页面标题和时间范围选择 -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-text-light dark:text-text-dark mb-2">网站分析</h1>
+                <p class="text-subtle-light dark:text-subtle-dark">深入了解您的网站流量和用户行为</p>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <select id="time-range" class="px-4 py-2 bg-ui-light dark:bg-ui-dark border border-border-light dark:border-border-dark rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary text-text-light dark:text-text-dark">
+                    <option value="7">最近7天</option>
+                    <option value="30" selected>最近30天</option>
+                    <option value="90">最近90天</option>
+                    <option value="365">最近一年</option>
+                </select>
+                <button id="export-btn" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2">
+                    <span class="material-icons-outlined text-sm">file_download</span>
+                    <span>导出报告</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 概览卡片 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- 总访问量 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-blue-500/10 rounded-lg">
+                        <span class="material-icons-outlined text-blue-500 text-xl">visibility</span>
+                    </div>
+                    <span class="text-sm text-green-500 font-medium">+15.3%</span>
+                </div>
+                <h3 class="text-2xl font-bold text-text-light dark:text-text-dark mb-1" id="total-visits">24.5k</h3>
+                <p class="text-sm text-subtle-light dark:text-subtle-dark">总访问量</p>
+            </div>
+            
+            <!-- 独立访客 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-green-500/10 rounded-lg">
+                        <span class="material-icons-outlined text-green-500 text-xl">people</span>
+                    </div>
+                    <span class="text-sm text-green-500 font-medium">+8.7%</span>
+                </div>
+                <h3 class="text-2xl font-bold text-text-light dark:text-text-dark mb-1" id="unique-visitors">8.2k</h3>
+                <p class="text-sm text-subtle-light dark:text-subtle-dark">独立访客</p>
+            </div>
+            
+            <!-- 页面浏览量 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-purple-500/10 rounded-lg">
+                        <span class="material-icons-outlined text-purple-500 text-xl">article</span>
+                    </div>
+                    <span class="text-sm text-red-500 font-medium">-3.2%</span>
+                </div>
+                <h3 class="text-2xl font-bold text-text-light dark:text-text-dark mb-1" id="page-views">52.8k</h3>
+                <p class="text-sm text-subtle-light dark:text-subtle-dark">页面浏览量</p>
+            </div>
+            
+            <!-- 平均会话时长 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="p-3 bg-yellow-500/10 rounded-lg">
+                        <span class="material-icons-outlined text-yellow-500 text-xl">schedule</span>
+                    </div>
+                    <span class="text-sm text-green-500 font-medium">+12.4%</span>
+                </div>
+                <h3 class="text-2xl font-bold text-text-light dark:text-text-dark mb-1" id="avg-duration">3:42</h3>
+                <p class="text-sm text-subtle-light dark:text-subtle-dark">平均会话时长</p>
+            </div>
+        </div>
+        
+        <!-- 图表区域 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- 访问量趋势 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark lg:col-span-2">
+                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">访问量趋势</h2>
+                <div class="h-80">
+                    <canvas id="visits-trend-chart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 设备分布 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">设备分布</h2>
+                <div class="h-64">
+                    <canvas id="device-chart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 流量来源 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg p-6 border border-border-light dark:border-border-dark">
+                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">流量来源</h2>
+                <div class="h-64">
+                    <canvas id="source-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 热门页面和地理位置 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- 热门页面 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg border border-border-light dark:border-border-dark">
+                <div class="p-6 border-b border-border-light dark:border-border-dark">
+                    <h2 class="text-lg font-semibold text-text-light dark:text-text-dark">热门页面</h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4" id="popular-pages">
+                        <!-- 热门页面将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 地理位置分布 -->
+            <div class="bg-ui-light dark:bg-ui-dark rounded-lg border border-border-light dark:border-border-dark">
+                <div class="p-6 border-b border-border-light dark:border-border-dark">
+                    <h2 class="text-lg font-semibold text-text-light dark:text-text-dark">地理位置分布</h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4" id="geo-distribution">
+                        <!-- 地理位置数据将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 用户行为分析 -->
+        <div class="bg-ui-light dark:bg-ui-dark rounded-lg border border-border-light dark:border-border-dark mb-8">
+            <div class="p-6 border-b border-border-light dark:border-border-dark">
+                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark">用户行为分析</h2>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 新老访客对比 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-subtle-light dark:text-subtle-dark mb-4">新老访客对比</h3>
+                        <div class="h-48">
+                            <canvas id="new-returning-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- 跳出率 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-subtle-light dark:text-subtle-dark mb-4">跳出率趋势</h3>
+                        <div class="h-48">
+                            <canvas id="bounce-rate-chart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- 会话时长分布 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-subtle-light dark:text-subtle-dark mb-4">会话时长分布</h3>
+                        <div class="h-48">
+                            <canvas id="session-duration-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 实时数据 -->
+        <div class="bg-ui-light dark:bg-ui-dark rounded-lg border border-border-light dark:border-border-dark">
+            <div class="p-6 border-b border-border-light dark:border-border-dark">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-lg font-semibold text-text-light dark:text-text-dark">实时数据</h2>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-sm text-subtle-light dark:text-subtle-dark">实时更新</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-text-light dark:text-text-dark" id="online-users">127</p>
+                        <p class="text-sm text-subtle-light dark:text-subtle-dark">在线用户</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-text-light dark:text-text-dark" id="today-visits">432</p>
+                        <p class="text-sm text-subtle-light dark:text-subtle-dark">今日访问</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-text-light dark:text-text-dark" id="today-pageviews">1,847</p>
+                        <p class="text-sm text-subtle-light dark:text-subtle-dark">今日浏览量</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-2xl font-bold text-text-light dark:text-text-dark" id="today-avg-duration">2:58</p>
+                        <p class="text-sm text-subtle-light dark:text-subtle-dark">今日平均时长</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

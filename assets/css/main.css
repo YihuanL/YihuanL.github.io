@@ -1,5 +1,9 @@
 /* 自定义CSS样式 */
 
+/* 导入其他样式文件 */
+@import url('./responsive.css');
+@import url('./seo.css');
+
 /* 基础样式 */
 body {
     font-family: 'Inter', sans-serif;

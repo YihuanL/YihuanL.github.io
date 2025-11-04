@@ -1,0 +1,72 @@
+{
+  "name": "个人博客网站",
+  "short_name": "个人博客",
+  "description": "个人博客网站，分享技术见解、创意思考和人生感悟",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#137fec",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "categories": ["education", "productivity", "technology"],
+  "icons": [
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "桌面版截图"
+    },
+    {
+      "src": "assets/images/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "移动版截图"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "最新文章",
+      "short_name": "文章",
+      "description": "查看最新发布的文章",
+      "url": "/pages/articles.html",
+      "icons": [
+        {
+          "src": "assets/images/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "写文章",
+      "short_name": "写作",
+      "description": "创建新文章",
+      "url": "/pages/create.html",
+      "icons": [
+        {
+          "src": "assets/images/icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

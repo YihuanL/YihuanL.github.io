@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# 网站地图
+Sitemap: https://yourusername.github.io/personal-website/sitemap.xml
+
+# 禁止访问的目录
+Disallow: /ui/
+Disallow: /assets/js/temp/
+Disallow: /temp/
+Disallow: /admin/
+
+# 禁止访问的文件类型
+Disallow: /*.tmp$
+Disallow: /*.temp$
+Disallow: /*.log$
+
+# 允许搜索引擎访问重要资源
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# 特殊指令
+Crawl-delay: 1

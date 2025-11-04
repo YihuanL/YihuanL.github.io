@@ -3,15 +3,81 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人博客网站</title>
-    <meta name="description" content="现代化个人博客网站，分享技术见解与创意思考">
+    <title>个人博客网站 - 分享技术见解与创意思考</title>
+    <meta name="description" content="个人博客网站，分享技术见解、创意思考和人生感悟。探索现代Web开发、设计系统和用户体验的最佳实践。">
+    <meta name="keywords" content="个人博客,技术博客,Web开发,设计系统,用户体验,前端开发,JavaScript,CSS,HTML">
+    <meta name="author" content="张三">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/personal-website/">
+    <meta property="og:title" content="个人博客网站 - 分享技术见解与创意思考">
+    <meta property="og:description" content="个人博客网站，分享技术见解、创意思考和人生感悟。探索现代Web开发、设计系统和用户体验的最佳实践。">
+    <meta property="og:image" content="https://yourusername.github.io/personal-website/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/personal-website/">
+    <meta property="twitter:title" content="个人博客网站 - 分享技术见解与创意思考">
+    <meta property="twitter:description" content="个人博客网站，分享技术见解、创意思考和人生感悟。探索现代Web开发、设计系统和用户体验的最佳实践。">
+    <meta property="twitter:image" content="https://yourusername.github.io/personal-website/assets/images/og-image.jpg">
+    
+    <!-- 预连接和字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <!-- 样式表 -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="./assets/css/main.css">
-    <script>
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    
+    <!-- 清单文件 -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- DNS 预解析 -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "个人博客网站",
+        "description": "个人博客网站，分享技术见解、创意思考和人生感悟",
+        "url": "https://yourusername.github.io/personal-website/",
+        "author": {
+            "@type": "Person",
+            "name": "张三",
+            "jobTitle": "全栈开发工程师",
+            "url": "https://yourusername.github.io/personal-website/profile.html"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "个人博客",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yourusername.github.io/personal-website/assets/images/logo.png"
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yourusername.github.io/personal-website/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {

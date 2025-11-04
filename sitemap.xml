@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- 首页 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- 文章列表页 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/articles.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 登录页 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/login.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- 个人资料页 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/profile.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 创建文章页 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/create.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- 管理仪表板 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/dashboard.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 网站分析 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/analytics.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 设置页面 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/settings.html</loc>
+        <lastmod>2023-11-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- 示例文章页面 -->
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=1</loc>
+        <lastmod>2023-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=2</loc>
+        <lastmod>2023-09-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=3</loc>
+        <lastmod>2023-08-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=4</loc>
+        <lastmod>2023-07-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=5</loc>
+        <lastmod>2023-06-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://yourusername.github.io/personal-website/pages/article.html?id=6</loc>
+        <lastmod>2023-05-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
